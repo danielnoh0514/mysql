@@ -1,0 +1,12 @@
+SELECT *
+FROM customers
+-- WHERE last_name LIKE '%field%' -> REGEXP 'field'
+WHERE last_name REGEXP 'field'
+
+-- WHERE last_name REGEXP '^field' -> last name starts with field
+-- WHERE last_name REGEXP 'field$' -> last name ends with field
+-- WHERE last_name REGEXP 'field|mac' -> last name contains either field or mac
+--WHERE last_name REGEXP '^field|mac'-> last name starts with field or contains mac
+--WHERE last_name REGEXP 'field$|mac'-  last name starts ends with field or contains mac
+--WHERE last_name REGEXP '[gim]e' -> last name contains ge, ie, or me 
+--WHERE last_name REGEXP '[a-h]e' -> abcdefgh e  
