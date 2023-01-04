@@ -1,0 +1,8 @@
+SELECT * 
+FROM customers
+ORDER BY points, first_name -- order by points first, if points == then sort by first_name
+
+SELECT *, quantity * unit_price AS total_price
+FROM order_items 
+WHERE order_id = 2
+ORDER BY total_price DESC
