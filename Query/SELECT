@@ -1,0 +1,18 @@
+SELECT *
+FROM customers
+-- WHERE customer_id=1
+ORDER BY first_name
+
+-- -> comment
+
+SELECT
+	first_name,
+    last_name,
+    points,
+    -- AS -> column name 'discount factor' or discount_factor
+    points * 10 + 10 AS 'discount factor' 
+FROM customers
+
+-- DISTINCT -> ignores duplicate information
+SELECT DISTINCT state 
+FROM customers
