@@ -1,0 +1,4 @@
+SELECT *
+FROM order_items
+-- use IN instead of VA OR FL OR GA
+WHERE state IN ('VA', 'FL', 'GA')
