@@ -1,0 +1,14 @@
+SELECT *
+FROM customers
+WHERE last_name LIKE 'b_____y'
+-- %c -> ends with c
+-- c% -> starts with c
+-- %c% -> c is between a name
+-- b_c -> _ represents one character so for Ex. bmc
+
+SELECT *
+FROM customers
+WHERE address LIKE '%TRAIL%' OR
+	  address LIKE '%AVENUE%' OR
+
+      
