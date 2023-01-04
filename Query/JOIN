@@ -2,3 +2,14 @@ SELECT order_id, o.product_id, quantity, o.unit_price
 FROM order_items o
 JOIN products p
 ON o.product_id = p.product_id
+
+SELECT order_id, o.product_id, quantity, o.unit_price
+FROM order_items o
+JOIN products p
+ON o.product_id = p.product_id
+
+-- USE sql_store;
+SELECT * 
+FROM order_items oi
+JOIN sql_inventory.products p -- joining table from another database
+	ON oi.product_id = p.product_id
