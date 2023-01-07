@@ -1,0 +1,7 @@
+SELECT 
+	o.order_id,
+    c.first_name
+FROM orders o
+NATURAL JOIN customers c
+
+-- The system automatically finds the common column but dangerous since I don't have the control over what's being joined
