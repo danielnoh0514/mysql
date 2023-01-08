@@ -13,9 +13,16 @@ SET
     payment_date = due_date
 WHERE client_id IN -- if changing one info then use = instead of IN
 			(SELECT client_id
-            FROM clients
-            WHERE state IN ('WV','OR'))
+			 FROM clients
+			 WHERE state IN ('WV','OR'))
 	   
+UPDATE orders
+SET
+	comments = 'Gold Customer'
+WHERE customer_id IN
+		(SELECT customer_id
+                FROM customers
+                WHERE points >3000) 
 
 -- check what info you want to change by selecting the sub query first
 SELECT *
