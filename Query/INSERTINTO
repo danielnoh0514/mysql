@@ -1,0 +1,26 @@
+INSERT INTO customers (
+	first_name, 
+    last_name, 
+    address, 
+    city, 
+    state)
+VALUES (
+	'Daniel',
+    'Noh',
+    'we',
+    'ci',
+    'wi')
+    
+or
+
+INSERT INTO customers
+VALUES (
+  DEFAULT,
+  'DANIEL',
+  'NOH',
+  DEFAULT,
+  DEFAULT
+  'WE',
+  'WE',
+  'WA',
+  DEFAULT
