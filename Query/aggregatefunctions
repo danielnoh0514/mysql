@@ -1,0 +1,9 @@
+SELECT 
+	MAX(invoice_total) AS Highest,
+    Min(invoice_total) AS Lowest,
+    AVG(invoice_total) AS Average,
+    SUM(invoice_total) AS Total, -- SUM(invoice_total * 1.1) -> multiplies 1.1 with each num then finds SUM
+    COUNT(DISTINCT client_id) AS num, -- only counts non null values. DISTINCT ignores duplicate info
+    COUNT(*) AS total_records
+FROM invoices 
+WHERE invoice_date > '2019-07-01'
