@@ -1,0 +1,22 @@
+SELECT *
+FROM products
+WHERE product_id NOT IN (
+	SELECT DISTINCT product_id
+	FROM order_items
+)
+
+
+-- choose between subquery and join method. see which one is easier to read
+
+SELECT *
+FROM clients
+WHERE client_id NOT IN (
+		SELECT DISTINCT client_id
+        FROM invoices
+)
+        
+        
+SELECT *
+FROM clients
+LEFT JOIN invoices USING (client_id)
+WHERE invoice_id IS NULL
