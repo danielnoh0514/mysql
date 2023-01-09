@@ -1,0 +1,8 @@
+SELECT
+	city,
+    state,
+    SUM(invoice_total) AS total_sales
+FROM invoices
+JOIN clients USING (client_id)
+GROUP BY state, city -- you collect total sales by grouping separately
+ORDER BY total_sales DESC
