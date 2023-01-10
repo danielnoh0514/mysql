@@ -1,0 +1,6 @@
+-- SELECT ROUND(5.7158, 2) - saves 2 decimal point
+-- SELECT TRUNCATE(5.167,2) -- prints 2 decimal point and ignores the rest
+-- SELECT CEILING(5.2) -- rounds to nearest int
+-- SELECT FLOOOR(5.2) -- opposite of CEILING
+-- SELECT ABS(-5.2) -- absolute value
+-- SELECT RAND() -- random value between 0 and 1
