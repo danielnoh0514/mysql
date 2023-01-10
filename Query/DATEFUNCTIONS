@@ -11,3 +11,7 @@
 SELECT *
 FROM orders
 WHERE YEAR(order_date) >= YEAR(NOW())
+
+-- SELECT DATE_FORMAT(NOW(), '%M %D %Y') -- -> January 11th 2023. if you change it to lowercase
+-- it becomes 23 instead of 2023
+-- SELECT TIME_FORMAT(NOW(), '%H:%i %p') -> 02:36 AM  
