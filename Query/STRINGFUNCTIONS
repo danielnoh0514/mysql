@@ -1,0 +1,14 @@
+-- SELECT LENGTH('SKY')  shows length of the string
+-- SELECT UPPER('sky') uppercase
+-- SELECT LOWER('SKY')  lowercase
+-- SELECT LTRIM(' SKY') removes unnecessary left space
+-- SELECT RTRIM('SKY    ') opposite of LTRIM
+-- SELECT LEFT('Kindergarten',4)  prints four letters from the left
+-- SELECT RIGHT('kindterawefw',4) opposite of LEFT
+-- SELECT SUBSTRING('kindergarten',3,5) from n select 5 characters
+-- SELECT LOCATE('n','kindergarten') tells where n is located 
+-- SELECT REPLACE('KINDERGARTEN', 'GARTEN', 'GARDEN') replaces garten to garden
+ -- SELECT CONCAT('FIRST','LAST') concatenates strings
+ SELECT CONCAT(first_name, ' ', last_name)
+ FROM customers
+ 
