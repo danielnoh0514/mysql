@@ -1,3 +1,5 @@
+-- this is applying subquery in SELECT area
+
 SELECT 
 	invoice_id, 
     invoice_total,
@@ -8,3 +10,15 @@ FROM invoices
 
 -- need to use (SELECT invoice_average) because you can't use alias in the same
 SELECT clause
+
+
+SELECT
+	c.client_id,
+    c.name,
+    (SELECT SUM(invoice_total)
+    FROM invoices
+    WHERE client_id = c.client_id) AS total_sales,
+    (SELECT AVG(invoice_total)
+    FROM invoices) AS average,
+    (SELECT total_sales - average) AS difference
+FROM clients c
