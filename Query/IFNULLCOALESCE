@@ -1,0 +1,5 @@
+--  SELECT 
+-- 	order_id,
+--     -- IFNULL(shipper_id, 'Not Assigned') if shipper_id is null, modify it to Not Assigned
+--     COALESCE(shipper_id, comments, 'Not Assigned') if shipper_id and comment are null put not assigned
+-- FROM orders
