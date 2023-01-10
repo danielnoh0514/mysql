@@ -15,3 +15,10 @@ WHERE YEAR(order_date) >= YEAR(NOW())
 -- SELECT DATE_FORMAT(NOW(), '%M %D %Y') -- -> January 11th 2023. if you change it to lowercase
 -- it becomes 23 instead of 2023
 -- SELECT TIME_FORMAT(NOW(), '%H:%i %p') -> 02:36 AM  
+
+-- SELECT DATE_ADD(NOW(), INTERVAL 1 DAY) adds one day from current date
+-- SELECT DATE_ADD(NOW(), INTERVAL -1 YEAR) subtracts one year from current date or use
+-- DATE_SUB
+-- SELECT DATEDIFF('2020-01-01', NOW()) shows time difference in days
+-- SELECT TIME_TO_SEC('09:00') shows time elasped since midnight
+-- SELECT TIME_TO_SEC('09:02') - TIME_TO_SEC('09:00') 
