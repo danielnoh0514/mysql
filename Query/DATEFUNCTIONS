@@ -1,0 +1,9 @@
+-- SELECT NOW() current time
+-- SELECT CURDATE() current date without time
+-- SELECT CURTIME() current time without date
+-- SELECT YEAR(NOW()) current year
+-- SELECT MONTH(NOW()) current month
+-- SELECT DAY(NOW()) current day
+-- SELECT HOUR MINUTE SECOND(NOW()) current hr, min, sec
+-- SELECT DAYNAME, MONTHNAME(NOW()) current day name, month name
+-- SELECT EXTRACT(YEAR FROM NOW()) current year 
