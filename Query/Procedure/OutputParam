@@ -10,3 +10,5 @@ BEGIN
     WHERE client_id = i.client_id AND payment_total = 0;
 END
 
+-- we use SET @invoices_count=0 when calling stored procedures that have output param
+-- and these are called user or session variables
