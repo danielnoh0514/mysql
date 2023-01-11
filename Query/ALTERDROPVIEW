@@ -1,0 +1,14 @@
+ DROP VIEW clients_balance -- deleting view
+ 
+ 
+CREATE OR REPLACE VIEW sales_by_client AS
+SELECT
+	client_id,
+    name AS NAME,
+    SUM(invoice_total) AS total_sales
+FROM clients
+JOIN invoices i USING (client_id)
+GROUP BY client_id, name
+
+-- make sure to make a view folder and save view queries so that you don't
+have to type down the whole thing again once you close the query tab
