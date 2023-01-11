@@ -1,0 +1,11 @@
+CREATE VIEW sales_by_client AS
+SELECT
+	client_id,
+    name,
+    SUM(invoice_total) AS total_sales
+FROM clients
+JOIN invoices i USING (client_id)
+GROUP BY client_id, name
+
+-- views are basically virtual tables we can save them under db and look at the 
+tables as we need them. no need to type in query again
