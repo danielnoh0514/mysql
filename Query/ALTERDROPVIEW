@@ -10,5 +10,16 @@ FROM clients
 JOIN invoices i USING (client_id)
 GROUP BY client_id, name
 
+-- DISTINCT
+-- Aggregate Functions (MIN, MAX, SUM, AVG, COUNT)
+-- GROUP BY / HAVING
+-- UNION
+-- if you don't have any of these in view, the view is called updatable
+-- views
+
+UPDATE invoices_with_balance
+SET due_date = DATE_ADD(due_date, INTERVAL 2 DAY)
+WHERE invoice_id = 2
+
 -- make sure to make a view folder and save view queries so that you don't
 have to type down the whole thing again once you close the query tab
