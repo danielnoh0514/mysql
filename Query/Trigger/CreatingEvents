@@ -1,0 +1,11 @@
+DELIMITER $$
+
+CREATE EVENT yearly_delete_stale_audit_rows
+ON SCHEDULE
+	EVERY 1 YEAR -- STARTS '2019-01-01' ENDS '2029-01-01' you can set time
+DO BEGIN
+	DELETE FROM payments_audit
+    WHERE action_date < NOW() - INTERVAL 5 YEAR;
+END $$
+
+DELIMITER ;
