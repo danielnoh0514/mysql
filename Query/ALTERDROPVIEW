@@ -9,6 +9,8 @@ SELECT
 FROM clients
 JOIN invoices i USING (client_id)
 GROUP BY client_id, name
+WITH OPTION CHECK -- this prevents a row from being deleted
+-- without this, since the balance becomes 0, the invoice_id=2 row gets deleted
 
 -- DISTINCT
 -- Aggregate Functions (MIN, MAX, SUM, AVG, COUNT)
