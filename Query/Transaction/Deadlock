@@ -1,0 +1,23 @@
+1.
+START TRANSACTION;
+UPDATE customers SET state = 'VA' WHERE customer_id = 1;
+UPDATE orders SET status = 1 WHERE order_id = 1;
+COMMIT;
+
+-- two connections 
+-- 1. -> 2, 3
+-- 2. -> 12, 13, 14
+-- 1. -> 4
+-- Then deadlock occurs. when i update customers from the first connection, the
+system locks the customer data so that concurrency doesn't occur (isolation lvl)
+doesn't matter. so when I update customers in the 2nd connection the execution
+keeps on running (bc there's already a lock in customer data). 
+-- simply, since 1st connection updates customers and 2nd connection
+updates orders, they put locks and wait for each other to finish updating.
+
+
+2.
+START TRANSACTION;
+UPDATE orders SET status = 1 WHERE order_id = 1;
+UPDATE customers SET state = 'VA' WHERE customer_id = 1;
+COMMIT;
