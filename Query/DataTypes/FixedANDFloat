@@ -1,0 +1,6 @@
+-- DECIMAL(p,s) -> p=max num of digits, s=num of decimal digits 
+-- DEC
+-- NUMERIC
+-- FIXED
+-- FLOAT 4BYTE
+-- DOUBLE 8BYTE
