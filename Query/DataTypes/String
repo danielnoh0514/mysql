@@ -1,0 +1,8 @@
+-- CHAR(x) -> fixed length
+-- VARCHAR(x) -> VARCHAR(50) for short strings, VARCHAR(255) for medium-length strings
+-- the maximum length of VARCHAR is 65,535 characters, which is 64KB
+-- MEDIUMTEXT max:16MB
+-- LONGTEXT max:4GB
+-- TINYTEXT max: 255 bytes or characters
+-- TEXT max: 64KB
+
