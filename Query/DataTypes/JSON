@@ -1,0 +1,47 @@
+UPDATE products
+SET properties = '
+{
+ "dimensions": [1,2,3],
+ "weight": 10, 
+ "manufacturer": { "name": "sony" }
+}
+'
+WHERE product_id = 1;
+
+-- SAME THING
+
+UPDATE products
+SET properties = JSON_OBJECT(
+	'weight', '10', 
+	'dimensions', JSON_ARRAY(1,2,3),
+	'manufacturer', JSON_OBJECT('name', 'sony')
+)
+
+WHERE product_id = 1;
+
+
+SELECT product_id, JSON_EXTRACT(properties, '$.weight') -- $ means current JSON document
+FROM products
+WHERE product_id = 1
+
+--SAME THING
+
+SELECT product_id, properties -> '$.weight'
+FROM products
+WHERE product_id = 1
+
+SELECT product_id, properties -> '$.dimensions[1]' -- dimension value
+FROM products
+WHERE product_id = 1
+
+-- use ->> if you want to get rid of the quotes
+
+-- this is for modifying data
+-- weight 10 -> 20
+UPDATE products
+SET properties = JSON_SET( -- JSON_REMOVE if you want to remove
+	properties,
+    '$.weight', 20, 
+    '$.age', 10
+)
+WHERE product_id = 1;
