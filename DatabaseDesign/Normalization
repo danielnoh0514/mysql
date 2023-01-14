@@ -1,0 +1,15 @@
+Normalization prevents duplicate information
+You need to apply three normal forms
+
+First normal form - each cell should have a single value and we cannot have repeated columns 
+ adding many to many relationship between tables
+ use length table
+
+Second normal form - every table should describe one entity, and every column in that
+table should describe that entity.
+Ex. courses table has 3 coumns -> course id, title and price. every column describes course
+ 
+ 
+ Third normal form - a column should not be derived from other columns
+ EX. first_name, last_name, full_name
+ delete full_name 
