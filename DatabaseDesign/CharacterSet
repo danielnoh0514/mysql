@@ -1,0 +1,10 @@
+-- ALTER DATABASE sql_store2
+-- CHARACTER SET latin1
+
+-- CREATE DATABASE sql_store2
+-- CHARACTER SET latin1
+
+-- CREATE TABLE table1 
+-- (
+-- )
+-- CHARACTER SET latin1
