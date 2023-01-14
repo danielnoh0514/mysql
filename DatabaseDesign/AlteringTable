@@ -1,0 +1,6 @@
+ALTER TABLE orders
+	DROP FOREIGN KEY fk_orders_customers, 
+    ADD FOREIGN KEY fk_orders_customers (customer_id)
+    REFERENCES customers (customer_id)
+    ON UPDATE CASCADE
+    ON DELETE NO ACTION;
