@@ -26,3 +26,5 @@ CREATE INDEX idx_state_lastname ON customers
 # For this example, it shows the performance difference between two composite indexes. idx_state_lastname searches for state=CA
 first, then last_name. For id_lastname_state, it needs to go through 40 rows. In conclusion, create composite indexes with
 the best performance and see the result with queries
+# for the query, state='NY' AND lastname LIKE 'A%', you can see that state='NY' is more restrictive because it has the equal sign.
+so it's better to use the queries that are more restrictive to quickly get the result.
