@@ -1,0 +1,6 @@
+CREATE INDEX idx_state_points ON customers (state, points);
+EXPLAIN SELECT customer_id FROM customers
+WHERE state = 'CA' AND points > 1000
+
+# composite index is an index for searching multiple columns. in this example, it finds the state CA and points>1000 using
+composite index
