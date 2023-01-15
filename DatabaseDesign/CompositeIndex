@@ -4,3 +4,25 @@ WHERE state = 'CA' AND points > 1000
 
 # composite index is an index for searching multiple columns. in this example, it finds the state CA and points>1000 using
 composite index
+
+
+EXPLAIN SELECT customer_id
+FROM customers
+USE INDEX (idx_lastname_state )
+WHERE state = 'NY' AND last_name LIKE 'A%';
+
+EXPLAIN SELECT customer_id
+FROM customers
+USE INDEX (idx_state_lastname )
+WHERE state = 'NY' AND last_name LIKE 'A%';
+
+CREATE INDEX idx_lastname_state ON customers
+(last_name, state); 40 rows
+
+
+CREATE INDEX idx_state_lastname ON customers
+(state, last_name); 2 rows
+
+# For this example, it shows the performance difference between two composite indexes. idx_state_lastname searches for state=CA
+first, then last_name. For id_lastname_state, it needs to go through 40 rows. In conclusion, create composite indexes with
+the best performance and see the result with queries
