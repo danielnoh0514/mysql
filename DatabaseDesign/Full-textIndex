@@ -1,0 +1,12 @@
+CREATE FULLTEXT INDEX idx_title_body ON posts (title, body);
+
+SELECT *, MATCH(title, body) AGAINST('react redux') # this gives the relavance score
+FROM posts
+WHERE MATCH(title, body) AGAINST('react redux');
+
+SELECT *
+FROM posts
+WHERE MATCH(title, body) AGAINST('react -redux +form' IN BOOLEAN MODE);
+# or use ' "handling a form" ' to find the exact phrase
+# boolean mode can exclude or include texts to search. 
+# use full-text indexes for longer texts. for name and address, the shorter texts, use prefix index
