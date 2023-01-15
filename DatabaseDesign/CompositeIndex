@@ -28,3 +28,23 @@ first, then last_name. For id_lastname_state, it needs to go through 40 rows. In
 the best performance and see the result with queries
 # for the query, state='NY' AND lastname LIKE 'A%', you can see that state='NY' is more restrictive because it has the equal sign.
 so it's better to use the queries that are more restrictive to quickly get the result.
+
+-- EXPLAIN
+-- 	SELECT customer_id FROM customers
+--     WHERE state='CA' OR points>1000
+# 1010 rows
+# create index idx_points since after finding the state CA, need to go through whole table
+# for points>1000 so create an index separately just for it
+CREATE INDEX idx_points ON customers (points);
+DROP INDEX idx_points ON customers;
+EXPLAIN
+	SELECT customer_id FROM customers
+    WHERE state='CA'
+    UNION
+    SELECT customer_id FROM customers
+    WHERE points > 1000
+    
+-- when we use an expression like points+10, can't use the index in the best way
+-- so instead of WHERE points + 10 > 2010, write WHERE points > 2000
+-- always isolate the column
+    
