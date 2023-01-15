@@ -1,0 +1,11 @@
+-- 1: web/desktop application 
+CREATE USER moon_app IDENTIFIED BY '1234';
+
+GRANT SELECT, INSERT, DELETE, UPDATE, EXECUTE
+ON sql_store.*
+TO moon_app;
+
+-- 2: admin
+ GRANT ALL # granting all privileges
+ ON *.* # all databases and all tables
+ TO daniel;
