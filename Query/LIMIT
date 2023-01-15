@@ -2,3 +2,5 @@ SELECT *
 FROM customers
 ORDER BY points DESC
 LIMIT 3
+
+# this prints 3 customers with the highest points
